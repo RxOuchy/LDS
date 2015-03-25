@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<!--   
+/**
+ *     Listrak Flat File Instalation Wizard 
+ *     
+ *     @category   Listrak
+ *     @package    Listrak Development Services Flat File Wizard
+ *     @author     Listrak Development Services <lds@listrak.com>
+ *     @version    1.0.0
+ */
+ -->
+ 
+ <config>
+    <install>
+        <date><![CDATA[Fri, 06 Feb 2015 16:25:11 +0000]]></date>
+    </install>
+    <crypt>
+        <key><![CDATA[abcdefghijklmnop]]></key>
+    </crypt>
+    <db>        
+        <connection>
+            <host><![CDATA[localhost]]></host>
+            <username><![CDATA[root]]></username>
+            <password><![CDATA[]]></password>
+        </connection>
+    </db>
+ </config>
