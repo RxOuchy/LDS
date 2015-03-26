@@ -18,11 +18,13 @@
     <crypt>
         <key><![CDATA[abcdefghijklmnop]]></key>
     </crypt>
-    <db>        
+    <database>        
         <connection>
             <host><![CDATA[localhost]]></host>
             <username><![CDATA[root]]></username>
             <password><![CDATA[]]></password>
+            <database><![CDATA[ee11410]]></database>
+            <port><![CDATA[3306]]></port>
         </connection>
-    </db>
+    </database>
  </config>

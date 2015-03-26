@@ -11,26 +11,22 @@
     ini_set('display_errors', '1');
     error_reporting(1);
     require_once('templates/header.php');
-    require_once('includes/globals.include.php');
-    require_once('includes/db.include.php');
+    require_once('includes/include.index.php');
     
-    $configStatus = false;
-    
-    if (file_exists('config/config.xml')){
-        $config = 'config/config.xml';
-        $configStatus = true;
-    }
+    initDB();
     
 ?>
 
     <section id="content">
         
-        <?php 
-            $test = new dbConnection();
+        <?php
             
-            $t = $test->build('SELECT * FROM core_config_data', 'config_id');
+            if(is_object($conn)) {
+                echo 'Yes';
+            } else {
+                echo 'No';
+            }
             
-            print_r($t);
         ?>
 
     </section>

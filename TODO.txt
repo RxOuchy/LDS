@@ -1,0 +1,16 @@
+Things I need to update.
+
+- Get Table Info from the settings XML
+
+- Rework the DB Initialization
+    a. First I need to determine if the XML File Exists.
+        - If the file does not exists we need to create it and display the Home Screen with DB Init fields (SERVER, USER, PASS, DB) textboxes
+        - If the file exists, we need to check to see if the database element exists.
+    b. If the database element exists I want to objectify the reading of the xml file, then return the login information and then call the DB connection.
+        - Right now this is all done at once and will cause issues if no file exists.
+
+- Write settings to XML
+
+- Determine the AJAX logic to move between pages without reload.
+
+- Fix styles

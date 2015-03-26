@@ -22,7 +22,7 @@
     </table>
     <table id="">
     </table>-->
-    <table id="core_flag">
+    <table id="core_flag" file="product">
         <select>flag_id,flag_code</select>
     </table>
  </settings>
