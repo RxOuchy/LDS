@@ -1,5 +1,5 @@
 <?php
 
-    $GLOBALS['conn'];
-    $GLOBALS['db'];
+    global $conn;
+    
 ?>
