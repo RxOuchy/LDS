@@ -1,37 +1,34 @@
 <?php
-/**
- *     Listrak Flat File Instalation Wizard 
- *     
- *     @category   Listrak
- *     @package    Listrak Development Services Flat File Wizard
- *     @author     Listrak Development Services <lds@listrak.com>
- *     @version    1.0.0
- */
- 
- global $conn;
- 
- require_once('includes/include.index.php');
- initDB();
- // $settings = new readConfig('config/settings.xml');
- // $settings->loadSettings();
- 
- echo "<pre>";
- 
-    $settings = simplexml_load_file('config/settings.xml');
+    /**
+     *     Listrak Flat File Instalation Wizard 
+     *     
+     *     @category   Listrak
+     *     @package    Listrak Development Services Flat File Wizard
+     *     @author     Listrak Development Services <lds@listrak.com>
+     *     @version    1.0.0
+     */
     
-    $sql = 'SELECT ' . $settings->table->select . ' FROM ' . $settings->table['id'];
-    
-    $str = $settings->table->select;
-    $arr = 
-    
-    $toret = $settings->table->select . "\n\r";
-    
-    $result = $conn->query($sql);
-    while( $row = $result->fetch_array()) {
-        for($i = 0; $i < $result->numFields(); $i++) {
-            $toret .= $row[$i];
+    ini_set('display_errors', '1');
+    error_reporting(-1);
+    global $conn;
+    try {
+        require_once(__DIR__ . '/includes/include.index.php');
+        initDB();
+        
+        $export = new exportProcess(__DIR__ . '/config/settings.xml');
+        //Test Data
+        //$args = array('php','products','orders');
+        $table = $export->loadSettings($argv);
+        
+        foreach ($table as $key => $value) {
+            
+            $data = $export->getFileData($key, $value);
+            $run = $export->generateOutput($key, $data);
+            
         }
+        
+    } catch (Exception $e) {
+        echo $e->getMessage();
     }
-    
- 
+
  ?>

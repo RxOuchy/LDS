@@ -14,3 +14,14 @@ Things I need to update.
 - Determine the AJAX logic to move between pages without reload.
 
 - Fix styles
+
+
+
+--Code Hold
+    -Get Primary Key for Table
+        -$sql = "SHOW KEYS FROM sales_flat_order WHERE Key_name = 'PRIMARY'";
+    --GET Relationship Data
+        -$sql = "select TABLE_NAME,COLUMN_NAME,REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME
+                        from information_schema.key_column_usage
+                        where constraint_schema = 'ee11410'
+                        and REFERENCED_COLUMN_NAME IS NOT NULL";
