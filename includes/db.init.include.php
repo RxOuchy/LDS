@@ -2,10 +2,8 @@
 
     function initDB() {
         global $conn;
-    
-        if (file_exists('config/config.xml')){
-            
-            $config = 'config/config.xml';
+        if (file_exists(__DIR__ . '/../config/config.xml')){
+            $config = __DIR__ . '/../config/config.xml';
             
             $configXML = simplexml_load_file($config);
             $host   = (string)$configXML->database->connection->host;

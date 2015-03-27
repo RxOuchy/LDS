@@ -2,11 +2,11 @@
 
 class dbConnection extends mysqli {
 
-    private $host ="localhost";
-    private $user = "root"; 
-    private $password = "";
-    private $db="forums";
-    private $port = 3306;
+    private $host       ="localhost";
+    private $user       = "root"; 
+    private $password   = "";
+    private $db         = "database";
+    private $port       = 3306;
 
 	function __construct($host, $user, $pass, $db, $port) {
         
@@ -31,12 +31,12 @@ class dbConnection extends mysqli {
 	}
 
 	function build( $sql, $key = "id") {
-	   
 		$qrh = $this->query($sql) or die( $this->error . "<br>" . $sql );
+        
 		while ($row = $qrh->fetch_array()) {
 			foreach( $row as $k=>$v ) {
 				if( !is_numeric( $k ) ) {
-					$toret[$row[$key]][ $k ] = $v;
+					$toret[$row[$key]][ $k ] = str_replace(array("\n", "\r", "\r\n"), '', $v);
 				}
 			}			
 		}
@@ -53,7 +53,7 @@ class dbConnection extends mysqli {
 		
 		$qrh = $this->query($sql) or die( $this->error . "<br>" . $sql );
 		
-		if( is_resource( $qrh ) ) {
+		if( $qrh ) {
 			$row = $qrh->fetch_array();
 			return $row;
 		} else {

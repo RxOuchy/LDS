@@ -12,17 +12,26 @@
  -->
  
  <settings>
-    <!--<table id="sales_flat_order">
-        <select>*</select>
-    </table>
-    <table id="sales_flat_order_item">
-        <select>*</select>
-    </table>
-    <table id="">
-    </table>
-    <table id="">
-    </table>-->
-    <table id="core_flag" file="product">
-        <select>flag_id,flag_code</select>
-    </table>
+    <database>
+        <table id="sales_flat_order">
+            <file>orders</file>
+            <select>*</select>
+            <key>entity_id</key>
+        </table>
+        <table id="sales_flat_order_item">
+            <file>orderitems</file>
+            <select>*</select>
+            <key>item_id</key>
+        </table>
+        <table id="core_flag">
+            <file>products</file>
+            <select>flag_id,flag_code</select>
+            <key>flag_id</key>
+        </table>
+    </database>
+    <ftp>
+        <host>ftp.ghostsector.com</host>
+        <username>listrak</username>
+        <password>listrak</password>
+    </ftp>
  </settings>
