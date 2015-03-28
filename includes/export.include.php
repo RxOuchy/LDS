@@ -30,7 +30,9 @@ class exportProcess {
                 $settings[$arguments[$i]] = $this->getSettingsByType($arguments[$i]);
             }
         } else {
-            $settings = $this->settings;
+            foreach( $this->settings as $k => $v) {
+                $settings[(string)$v->file] = $v;
+            }
         }
         return $settings;
     }

@@ -1,3 +1,12 @@
+/**
+ *     Listrak Flat File Instalation Wizard 
+ *     
+ *     @category   Listrak
+ *     @package    Listrak Development Services Flat File Wizard
+ *     @author     Listrak Development Services <lds@listrak.com>
+ *     @version    1.0.0
+ */
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -5,7 +14,7 @@
 }
 
 body {
-    font-size: .85em;
+    font-size: 14px;
     font-family: "Segoe UI",'Trebuchet MS',Verdana,Helvetica,Sans-Serif;
     color: #232323;
     background-color: #fff;
