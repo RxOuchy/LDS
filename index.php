@@ -9,38 +9,26 @@
  */
  
     ini_set('display_errors', '1');
-    error_reporting(1);
-    require_once('templates/header.php');
-    require_once('includes/include.index.php');
+    error_reporting(-1);
+    require_once(__DIR__ . '/templates/header.php');
+    require_once(__DIR__ . '/includes/include.index.php');
     
     initDB();
     
 ?>
 
-    <section id="content">
-        
+    <section id="ltk-content">
         <?php
             
-            $sql = "select TABLE_NAME,COLUMN_NAME,REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME
-                        from information_schema.key_column_usage
-                        where constraint_schema = 'ee11410'
-                        and REFERENCED_COLUMN_NAME IS NOT NULL";
-            $res = $conn->query($sql);
-            echo "<pre>";
-            print_r($res->fetch_row());
-            
-            
-            if(is_object($conn)) {
-                echo 'Yes';
+            if (isset($_GET['step'])) {
+                include(__DIR__ . '/pages/step' . $_GET['step'] . '.page.php');
             } else {
-                echo 'No';
+                include(__DIR__ . '/pages/home.page.php');
             }
-            
         ?>
-
     </section>
 
 
 <?php
-    require_once('templates/footer.php');
+    require_once(__DIR__ . '/templates/footer.php');
 ?>

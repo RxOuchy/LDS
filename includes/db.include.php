@@ -1,5 +1,13 @@
 <?php
-
+/**
+ *     Listrak Flat File Instalation Wizard 
+ *     
+ *     @category   Listrak
+ *     @package    Listrak Development Services Flat File Wizard
+ *     @author     Listrak Development Services <lds@listrak.com>
+ *     @version    1.0.0
+ */
+ 
 class dbConnection extends mysqli {
 
     private $host       ="localhost";

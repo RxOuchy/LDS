@@ -1,0 +1,25 @@
+/**
+ *     Listrak Flat File Instalation Wizard 
+ *     
+ *     @category   Listrak
+ *     @package    Listrak Development Services Flat File Wizard
+ *     @author     Listrak Development Services <lds@listrak.com>
+ *     @version    1.0.0
+ */
+
+
+h1, h2, h3, h4, h5, p { margin:0; padding:0; }
+
+#ltk-wrapper { width: 1000px; margin: 0 auto; padding: 40px 0; }
+
+/* Header */
+.ltk-header h1 { margin-bottom: 15px; }
+
+/* Body */
+.ltk-body p { margin-bottom: 15px; }
+
+/* Buttons */
+.ltk-buttons input { background:#23B7E1; color:#FFF; font-weight: bold; font-style: normal; font-size:15px; padding:8px 15px; margin: 10px 25px 0 0; border:none; cursor:pointer; box-shadow: 0px 2px 3px rgba(0,0,0,.25); }
+.ltk-buttons input:hover { opacity:.8; }
+.ltk-buttons input:focus { outline: none; }
+.ltk-btn-right { float: right;  margin-right: 50px !important; }
