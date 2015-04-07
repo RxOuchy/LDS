@@ -1,16 +1,3 @@
-<?php
-
-/**
- *     Listrak Flat File Setup Wizard 
- *     
- *     @category   Listrak
- *     @package    Listrak Development Services Flat File Wizard
- *     @author     Listrak Development Services <lds@listrak.com>
- *     @version    1.0.0
- */
- 
- ?>
-
 <div id="ltk-wrapper" class="ltk-main-wrapper">
     <div class="ltk-header">
         <h1>Welcome to the Listrak Flat File Setup Wizard</h1>

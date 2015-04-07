@@ -8,15 +8,15 @@
  *     @author     Listrak Development Services <lds@listrak.com>
  *     @version    1.0.0
  */
- 
-//Use this to organize the included files properly.
-require_once(__DIR__. '/globals.include.php');
 
-//Database
-require_once(__DIR__ . '/db.include.php');
-require_once(__DIR__ . '/db.init.include.php');
+//Bootstrap
+require '/libs/Bootstrap.php';
 
-//Export
-require_once(__DIR__ . '/export.include.php');
+//Controller Framework
+require '/libs/Controller.php';
+
+//View Framework
+require '/libs/View.php';
+
 
 ?>

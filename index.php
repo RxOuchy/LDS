@@ -14,18 +14,13 @@
     require_once(__DIR__ . '/templates/header.php');
     require_once(__DIR__ . '/includes/include.index.php');
     
-    initDB();
+    //initDB();
     
 ?>
 
     <section id="ltk-content">
         <?php
-            
-            if (isset($_GET['step'])) {
-                include(__DIR__ . '/pages/step' . $_GET['step'] . '.page.php');
-            } else {
-                include(__DIR__ . '/pages/home.page.php');
-            }
+            $app = new Bootstrap();
         ?>
     </section>
 
