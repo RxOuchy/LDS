@@ -1,5 +1,14 @@
 <?php
 
+/**
+ *     Listrak Flat File Setup Wizard 
+ *     
+ *     @category   Listrak
+ *     @package    Listrak Development Services Flat File Wizard
+ *     @author     Listrak Development Services <lds@listrak.com>
+ *     @version    1.0.0
+ */
+
     function initDB() {
         global $conn;
         if (file_exists(__DIR__ . '/../config/config.xml')){
