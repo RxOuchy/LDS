@@ -1,5 +1,9 @@
 Things I need to update.
 
+- Define Diferential Key (modified date, updated date)
+
+- Do not allow to unselect "KEY" fields (Primary Key/ foriegn key)
+
 - Get Table Info from the settings XML
 
 - Rework the DB Initialization
@@ -13,8 +17,13 @@ Things I need to update.
 
 - Determine the AJAX logic to move between pages without reload.
 
-- Fix styles
-
+- Fix frontend layout
+    -Create Layout to be similar among the 2 applications
+    -Go with Left Side "List" with New Button
+    -Right side data entry fields with save button
+    
+-Create Database Tree List
+    -Allow field selection from Tree
 
 
 --Code Hold

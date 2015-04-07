@@ -1,7 +1,7 @@
 <?php
 
 /**
- *     Listrak Flat File Instalation Wizard 
+ *     Listrak Flat File Setup Wizard 
  *     
  *     @category   Listrak
  *     @package    Listrak Development Services Flat File Wizard
