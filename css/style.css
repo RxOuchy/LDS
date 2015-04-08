@@ -52,11 +52,6 @@ button a,button a:hover {
     color: #fff;
 }
 
-#StatusList {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
 #interior-container {
     padding: 159px 0 0 0;
     overflow: hidden;
@@ -80,6 +75,8 @@ button a,button a:hover {
 #top-nav-inner ul {
     overflow: auto;
     float: right;
+    margin: 0;
+    padding: 0;
 }
 
 #top-nav-inner ul li {
@@ -89,13 +86,6 @@ button a,button a:hover {
     font-style: normal;
     font-size: 13px;
     display: block;
-    border-left: 1px solid #4d4d4d;
-}
-
-#top-nav-inner ul li.phone {
-    color: #a2a2a2;
-    border: none;
-    padding: 18px 15px;
 }
 
 #top-nav-inner ul li a {
@@ -204,57 +194,6 @@ button a,button a:hover {
     margin: 0;
 }
 
-#footer-inner .footer-module #signup-form .signup-submit {
-    margin: 10px 0 0 0;
-}
-
-#social-icons {
-    position: relative;
-}
-
-#social-icons img {
-    margin: 0 5px;
-}
-
-#social-icons img.facebook,#social-icons img.youtube,#social-icons img.rss {
-    margin-top: -6px;
-}
-
-#social-icons a {
-    top: 0;
-}
-
-#social-icons a:hover {
-    position: relative;
-    top: 2px;
-    opacity: .8;
-}
-
-#assc-logos {
-    text-align: center;
-}
-
-#assc-logos img {
-    margin: 0 12px 20px 12px;
-    float: left;
-}
-
-#assc-logos img.truste {
-    margin-left: 0;
-}
-
-#assc-logos img.espc {
-    margin: 4px 11px 20px 7px;
-}
-
-#assc-logos img.maawg {
-    margin: 4px 0 20px 5px;
-}
-
-#assc-logos img.ota {
-    margin: 0 0 0 124px;
-}
-
 .bottom-footer {
     background: #2b2b2b;
     border-bottom: 1px solid #413d3e;
@@ -276,7 +215,7 @@ button a,button a:hover {
     font-size: 13px;
     line-height: 17px;
     color: #4f4b4c;
-    margin: 20px 0 0 0;
+    margin: 10px 0;
 }
 
 .bottom-footer-inner ul {

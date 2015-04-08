@@ -9,6 +9,9 @@
  *     @version    1.0.0
  */
 
+define('URL', 'http://localhost/LDS/');
+define('LIBS', 'libs/');
+
 //Bootstrap
 require '/libs/Bootstrap.php';
 
