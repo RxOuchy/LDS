@@ -1,8 +1,11 @@
 <?php
 
-    class Error {
+    class Error extends Controller {
         function __construct() {
-            echo "Error";
+            parent::__construct();
+        }
+        function index() {
+            $this->view->render('error');
         }
     }
 ?>

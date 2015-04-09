@@ -25,6 +25,12 @@
             <username>listrak</username>
             <password>listrak</password>
         </server>
+        <server>
+			<name>Listrak</name>
+			<host>ftp.listrakbi.com</host>
+			<username>listrak</username>
+			<password>listrak</password>
+		</server>
     </ftp>
     <exports>
         <table id="sales_flat_order">
@@ -46,9 +52,9 @@
     <database>        
         <connection>
             <host><![CDATA[localhost]]></host>
-            <username><![CDATA[listrak]]></username>
-            <password><![CDATA[listrak123]]></password>
-            <database><![CDATA[ee11410]]></database>
+            <username><![CDATA[root]]></username>
+            <password><![CDATA[]]></password>
+            <database><![CDATA[magento]]></database>
             <port><![CDATA[3306]]></port>
         </connection>
     </database>
