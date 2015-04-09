@@ -1,16 +1,3 @@
-<?php
-
-/**
- *     Listrak Flat File Setup Wizard 
- *     
- *     @category   Listrak
- *     @package    Listrak Development Services Flat File Wizard
- *     @author     Listrak Development Services <lds@listrak.com>
- *     @version    1.0.0
- */
- 
- ?>
-
 <div id="ltk-wrapper" class="ltk-main-wrapper">
     <div class="ltk-header">
         <h1>Welcome to the Listrak Flat File Setup Wizard</h1>
@@ -34,7 +21,20 @@
         </p>
     </div>
     <div class="ltk-buttons">
-        <input type="button" class="ltk-btn-right" value="Continue" onclick="window.location = 'index.php?step=1';" />
+        <!--<input type="button" class="ltk-btn-right" value="Continue" onclick="window.location = 'index.php?step=1';" />-->
+        <a href="<?php echo URL; ?>ftp" class="ltk-btn-right">Continue</a> 
     </div>
     <div style="clear:both;"></div>
 </div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery('.ltk-nav-item').each(function(index){
+            if(index == 0) {
+                jQuery(this).addClass('ltk-active-item');
+            } else {
+                jQuery(this).removeClass('ltk-active-item');
+            }
+        });        
+    });
+</script>

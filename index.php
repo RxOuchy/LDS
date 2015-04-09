@@ -14,18 +14,23 @@
     require_once(__DIR__ . '/templates/header.php');
     require_once(__DIR__ . '/includes/include.index.php');
     
-    initDB();
+    //initDB();
     
 ?>
 
     <section id="ltk-content">
+        <div id="ltk-nav-content">
+            <ul class="ltk-nav-items">
+                <li class="ltk-nav-item"><a href="#">Introduction</a></li>
+                <li class="ltk-nav-item"><a href="#">FTP Setup</a></li>
+                <li class="ltk-nav-item"><a href="#">Datebase Setup</a></li>
+                <li class="ltk-nav-item"><a href="#">File Export Setup</a></li>
+                <li class="ltk-nav-item"><a href="#">Complete</a></li>
+            </ul>
+        </div>
         <?php
-            
-            if (isset($_GET['step'])) {
-                include(__DIR__ . '/pages/step' . $_GET['step'] . '.page.php');
-            } else {
-                include(__DIR__ . '/pages/home.page.php');
-            }
+            $app = new Bootstrap();
+            $app->init();
         ?>
     </section>
 

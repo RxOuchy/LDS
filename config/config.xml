@@ -18,6 +18,31 @@
     <crypt>
         <key><![CDATA[abcdefghijklmnop]]></key>
     </crypt>
+    <ftp>
+        <server>
+            <name>GhostSector</name>
+            <host>ftp.ghostsector.com</host>
+            <username>listrak</username>
+            <password>listrak</password>
+        </server>
+    </ftp>
+    <exports>
+        <table id="sales_flat_order">
+            <file>orders</file>
+            <select>*</select>
+            <key>entity_id</key>
+        </table>
+        <table id="sales_flat_order_item">
+            <file>orderitems</file>
+            <select>*</select>
+            <key>item_id</key>
+        </table>
+        <table id="core_flag">
+            <file>products</file>
+            <select>flag_id,flag_code</select>
+            <key>flag_id</key>
+        </table>
+    </exports>
     <database>        
         <connection>
             <host><![CDATA[localhost]]></host>

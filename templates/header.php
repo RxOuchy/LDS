@@ -28,8 +28,7 @@
             <div id="top-nav">
                 <div id="top-nav-inner">
                     <ul>
-                            <li><a length="4" href="http://www.listrak.com/contact.aspx" target="_blank">Listrak Support</a></li>
-                            <li><a title="Sign In" href="https://admin.listrak.com/" target="_blank">Login</a></li>
+                        <li><a length="4" href="http://www.listrak.com/contact.aspx" target="_blank">Listrak Support</a></li>
                     </ul>
                     <div style="clear: both"></div>
                 </div>
