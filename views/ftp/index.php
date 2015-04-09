@@ -6,7 +6,10 @@
         
         <!-- Left 'Sidebar' Area -->
         <div id="ltk-left-content">
-            <textarea></textarea>
+            <ul class="ltk-menu-list">
+                <li class="ltk-menu-list-item" ltk-item-id="GhostSector">GhostSector</li>
+                <li class="ltk-menu-list-item" ltk-item-id="Listrak">Listrak</li>
+            </ul>
         </div>
         
         <!-- Right 'Form' Area -->
@@ -23,8 +26,8 @@
 
 <script type="text/javascript">
     jQuery(document).ready(function(){
-        jQuery('.ltk-menu-item').each(function(index){
-            if(index == 1) {
+        jQuery('.ltk-nav-item').each(function(index){
+            if(index === 1) {
                 jQuery(this).addClass('ltk-active-item');
             } else {
                 jQuery(this).removeClass('ltk-active-item');

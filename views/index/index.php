@@ -29,7 +29,7 @@
 
 <script type="text/javascript">
     jQuery(document).ready(function(){
-        jQuery('.ltk-menu-item').each(function(index){
+        jQuery('.ltk-nav-item').each(function(index){
             if(index == 0) {
                 jQuery(this).addClass('ltk-active-item');
             } else {

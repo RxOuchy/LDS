@@ -19,13 +19,13 @@
 ?>
 
     <section id="ltk-content">
-        <div id="ltk-menu-content">
-            <ul class="ltk-menu-items">
-                <li class="ltk-menu-item"><a href="#">Introduction</a></li>
-                <li class="ltk-menu-item"><a href="#">FTP Setup</a></li>
-                <li class="ltk-menu-item"><a href="#">Datebase Setup</a></li>
-                <li class="ltk-menu-item"><a href="#">File Export Setup</a></li>
-                <li class="ltk-menu-item"><a href="#">Complete</a></li>
+        <div id="ltk-nav-content">
+            <ul class="ltk-nav-items">
+                <li class="ltk-nav-item"><a href="#">Introduction</a></li>
+                <li class="ltk-nav-item"><a href="#">FTP Setup</a></li>
+                <li class="ltk-nav-item"><a href="#">Datebase Setup</a></li>
+                <li class="ltk-nav-item"><a href="#">File Export Setup</a></li>
+                <li class="ltk-nav-item"><a href="#">Complete</a></li>
             </ul>
         </div>
         <?php
