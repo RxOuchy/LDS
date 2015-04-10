@@ -1,3 +1,5 @@
+<!-- Home View -->
+
 <div id="ltk-wrapper" class="ltk-main-wrapper">
     <div class="ltk-header">
         <h1>Welcome to the Listrak Flat File Setup Wizard</h1>

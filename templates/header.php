@@ -49,3 +49,14 @@
         </div>
     
     </header>
+    
+    <section id="ltk-content">
+        <div id="ltk-nav-content">
+            <ul class="ltk-nav-items">
+                <li class="ltk-nav-item"><a href="index">Introduction</a></li>
+                <li class="ltk-nav-item"><a href="<?php echo URL; ?>ftp">FTP Setup</a></li>
+                <li class="ltk-nav-item"><a href="<?php echo URL; ?>database">Database Setup</a></li>
+                <li class="ltk-nav-item"><a href="<?php echo URL; ?>files">File Export Setup</a></li>
+                <li class="ltk-nav-item"><a href="<?php echo URL; ?>complete">Complete</a></li>
+            </ul>
+        </div>
