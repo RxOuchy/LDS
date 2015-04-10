@@ -9,7 +9,6 @@
         <!-- Left 'Sidebar' Area -->
         <div id="ltk-left-content">
             <ul class="ltk-menu-list">
-                <li class="ltk-menu-list-item selected" ltk-item-id="ee11410">ee11410</li>
             </ul>
             <ul class="ltk-menu-buttons">
                 <li class="ltk-menu-button">
@@ -23,19 +22,19 @@
         
         <!-- Right 'Form' Area -->
         <div id="ltk-right-content">
-            <form id="ltk-form" method="post" action="#">
-                <label for="NameTextBox">Name:</label>
-                <input type="text" id="NameTextBox" class="ltk-text" tabindex="1" value="ee11410" />
+            <form id="ltk-form" method="post" action="<?php echo URL; ?>database/PostFormData">
                 <label for="ServerTextBox">Server:</label>
-                <input type="text" id="ServerTextBox" class="ltk-text" tabindex="2" value="24.84.76.156" />
+                <input type="text" id="ServerTextBox" name="host" class="ltk-text" tabindex="1" value="24.84.76.156" />
                 <label for="UsernameTextBox">Username:</label>
-                <input type="text" id="UsernameTextBox" class="ltk-text" tabindex="3" value="listrak" />
+                <input type="text" id="UsernameTextBox" name="username" class="ltk-text" tabindex="2" value="listrak" />
                 <label for="PasswordTextBox">Password:</label>
-                <input type="text" id="PasswordTextBox" class="ltk-text" tabindex="4" value="listrak" />
+                <input type="text" id="PasswordTextBox" name="password" class="ltk-text" tabindex="3" value="listrak" />
+                <label for="PortTextBox">Port:</label>
+                <input type="text" id="PortTextBox" name="port" class="ltk-text" tabindex="4" value="listrak" />
                 <label for="DatabaseSelect">Database:</label>
-                <select id="DatabaseSelect">
-                    <option value="1">Select your database...</option>
-                    <option value="ee11410">ee11410</option>
+                <select id="DatabaseSelect" name="database" tabindex="5" >
+                    <option value="">Select your database...</option>
+                    <option value="ee11410" selected>ee11410</option>
                     <option value="magento">magento</option>
                 </select>
                 <br />
