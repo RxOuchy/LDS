@@ -28,21 +28,33 @@ h1, h2, h3, h4, h5, p { margin:0; padding:0; }
 .ltk-header h1 { margin-bottom: 15px; }
 
 /* Left Menu */
-#ltk-left-content { border: 1px solid #CCC; width: 175px; height: 285px; display: table-cell; }
+#ltk-left-content { border: 1px solid #CCC; width: 200px; height: 350px; display: table-cell; position: relative; }
 
 /* Menu & Menu Items */
 .ltk-menu-list { list-style: none; margin: 0; padding: 0; }
 .ltk-menu-list-item { padding: 10px; font-weight: bold; font-size: 15px; color: #555; }
-.ltk-menu-list .selected { background-color: #23b7e1; color: #FFF; }
+.ltk-menu-list .selected { background-color: #23b7e1; }
+.ltk-menu-list .selected a { color: #FFF; }
+.ltk-menu-list .selected a:hover { color: #CCC; }
+
+/* Menu Buttons */
+.ltk-menu-buttons { list-style: none; margin: 0; padding: 0 0 15px 16px; position: absolute; bottom: 0; }
+.ltk-menu-button { float: left; }
+.ltk-menu-button:first-child { margin-right: 15px; padding-right: 15px; border-right: 1px solid #CCC; }
+.ltk-menu-btn { margin: 0 !important; }
+.ltk-del-button { background: #DD1515 !important; display: none;}
 
 /* Body */
 .ltk-body p { margin-bottom: 15px; }
 #ltk-right-content { /*border: 1px solid #ccc;*/ width: 550px; padding-left: 30px; display: table-cell; }
 #ltk-right-content form label { width: 100%; display: block; }
-#ltk-right-content form input[type=text] { padding: 4px; width: 250px; }
+#ltk-right-content form input[type=text] { padding: 10px; width: 70%; border: 1px solid #989898; border-left: 5px solid #989898; background: #f1f1f1; margin-bottom: 20px; }
+#ltk-right-content form select { border: 1px solid #989898; border-left: 5px solid #989898; background: #f1f1f1; width: 70%; padding: 9px 10px; margin: 0 0 20px 0; }
 
 /* Buttons */
-.ltk-buttons input, .ltk-buttons a, .ltk-btn { background:#23B7E1; color:#FFF; font-weight: bold; font-style: normal; font-size:15px; padding:8px 15px; margin: 10px 25px 0 0; border:none; cursor:pointer; box-shadow: 0px 2px 3px rgba(0,0,0,.25); }
+.ltk-buttons { margin: 30px 30px 0 0;}
+.ltk-buttons input, .ltk-buttons a, .ltk-btn, .ltk-menu-btn { background:#23B7E1; color:#FFF; font-weight: bold; font-style: normal; font-size:15px; padding:8px 15px; margin: 10px 0 0 0; border:none; cursor:pointer; box-shadow: 0px 2px 3px rgba(0,0,0,.25); }
 .ltk-buttons input:hover, .ltk-buttons a:hover { opacity:.8; }
 .ltk-buttons input:focus { outline: none; }
 .ltk-btn-right { float: right;  margin-right: 50px !important; }
+

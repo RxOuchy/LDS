@@ -1,3 +1,5 @@
+<!-- FTP View -->
+
 <div id="ltk-wrapper" class="ltk-main-wrapper">
     <div class="ltk-header">
         <h1>Welcome to the Listrak Flat File Setup Wizard</h1>
@@ -6,23 +8,29 @@
         
         <!-- Left 'Sidebar' Area -->
         <div id="ltk-left-content">
-            <ul class="ltk-menu-list">
-                <li class="ltk-menu-list-item selected" ltk-item-id="GhostSector">GhostSector</li>
-                <li class="ltk-menu-list-item" ltk-item-id="Listrak">Listrak</li>                
+            <ul class="ltk-menu-list">             
+            </ul>
+            <ul class="ltk-menu-buttons">
+                <li class="ltk-menu-button">
+                    <input type="button" id="btnNew" class="ltk-menu-btn" value="New" />
+                </li>
+                <li class="ltk-menu-button">
+                    <input type="button" id="btnDelete" class="ltk-menu-btn ltk-del-button" value="Delete" />
+                </li>
             </ul>
         </div>
         
         <!-- Right 'Form' Area -->
         <div id="ltk-right-content">
-            <form id="ltk-form" method="post" action="#">
+            <form id="ltk-form" method="post" action="<?php echo URL; ?>ftp/PostFormData/">
                 <label for="NameTextBox">Name:</label>
-                <input type="text" id="NameTextBox" class="ltk-text" tabindex="1" value="GhostSector" />
+                <input type="text" id="NameTextBox" name="name" class="ltk-text" tabindex="1" />
                 <label for="HostTextBox">Host:</label>
-                <input type="text" id="HostTextBox" class="ltk-text" tabindex="2" value="ftp.ghostsector.com" />
+                <input type="text" id="HostTextBox" name="host" class="ltk-text" tabindex="2" />
                 <label for="UsernameTextBox">Username:</label>
-                <input type="text" id="UsernameTextBox" class="ltk-text" tabindex="3" value="listrak" />
+                <input type="text" id="UsernameTextBox" name="username" class="ltk-text" tabindex="3" />
                 <label for="PasswordTextBox">Password:</label>
-                <input type="text" id="PasswordTextBox" class="ltk-text" tabindex="4" value="listrak" />
+                <input type="text" id="PasswordTextBox" name="password" class="ltk-text" tabindex="4" />
                 <br />
                 <input type="submit" id="SubmitButton" class="ltk-btn" value="Save" />
             </form>
@@ -30,10 +38,18 @@
     </div>
     <div class="ltk-buttons">
         <!--<input type="button" class="ltk-btn-right" value="Continue" onclick="window.location = 'index.php?step=1';" />-->
-        <a href="<?php echo URL; ?>ftp" class="ltk-btn-right">Continue</a> 
+        <a href="<?php echo URL; ?>database" class="ltk-btn-right">Continue</a> 
     </div>
     <div style="clear:both;"></div>
 </div>
+
+<?php
+    if (isset($this->js)) {
+        foreach ( $this->js as $js ) {
+            echo '<script src="' . URL . 'views/' . $js . '"></script>';
+        }
+    }
+?>
 
 <script type="text/javascript">
     jQuery(document).ready(function(){

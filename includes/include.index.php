@@ -15,8 +15,14 @@ define('LIBS', 'libs/');
 //Bootstrap
 require '/libs/Bootstrap.php';
 
+//XML Class
+require '/libs/xml.php';
+
 //Controller Framework
 require '/libs/Controller.php';
+
+//Model Framework
+require '/libs/Model.php';
 
 //View Framework
 require '/libs/View.php';

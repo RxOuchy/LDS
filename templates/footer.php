@@ -10,7 +10,7 @@
  */
 
 ?>
-
+    </section>
     <div style="clear:both"></div>
     <div class="bottom-footer">
         <div class="bottom-footer-inner">

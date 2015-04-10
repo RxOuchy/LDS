@@ -25,26 +25,20 @@
             <username>listrak</username>
             <password>listrak</password>
         </server>
-        <server>
-			<name>Listrak</name>
-			<host>ftp.listrakbi.com</host>
-			<username>listrak</username>
-			<password>listrak</password>
-		</server>
     </ftp>
     <exports>
         <table id="sales_flat_order">
-            <file>orders</file>
+            <name>orders</name>
             <select>*</select>
             <key>entity_id</key>
         </table>
         <table id="sales_flat_order_item">
-            <file>orderitems</file>
+            <name>orderitems</name>
             <select>*</select>
             <key>item_id</key>
         </table>
         <table id="core_flag">
-            <file>products</file>
+            <name>products</name>
             <select>flag_id,flag_code</select>
             <key>flag_id</key>
         </table>
@@ -52,9 +46,9 @@
     <database>        
         <connection>
             <host><![CDATA[localhost]]></host>
-            <username><![CDATA[root]]></username>
-            <password><![CDATA[]]></password>
-            <database><![CDATA[magento]]></database>
+            <username><![CDATA[listrak]]></username>
+            <password><![CDATA[listrak123]]></password>
+            <database><![CDATA[ee11410]]></database>
             <port><![CDATA[3306]]></port>
         </connection>
     </database>
