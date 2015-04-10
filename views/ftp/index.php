@@ -43,13 +43,7 @@
     <div style="clear:both;"></div>
 </div>
 
-<?php
-    if (isset($this->js)) {
-        foreach ( $this->js as $js ) {
-            echo '<script src="' . URL . 'views/' . $js . '"></script>';
-        }
-    }
-?>
+
 
 <script type="text/javascript">
     jQuery(document).ready(function(){
