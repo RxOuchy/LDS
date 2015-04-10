@@ -6,7 +6,17 @@ class ftp_Model extends Model {
         $this->xml = new _XML();
     }
     
-    function PostFormData() {
+    function PostFormData() {        
+        $this->path = "/config/ftp/server";
+        $this->xPath = new DOMXPath($this->xml->xml);
+        
+        $this->node = $this->xPath->query($this->path)->item(0);
+        foreach( $this->node->childNodes as $child ) {
+            $child->firstChild->nodeValue = $_POST[$child->nodeName];
+        }
+        
+        $this->xml->xml->save($this->xml->_configPath);
+        echo json_encode("success");
         
     }
     
@@ -27,7 +37,7 @@ class ftp_Model extends Model {
     function getDataByName() {
         $name = $_POST['name'];
         
-        echo json_encode($this->xml->readNodeByName('server', $name));
+        echo json_encode($this->xml->readNodeByElement('server', $name));
         
     }
 

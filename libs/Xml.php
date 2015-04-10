@@ -2,12 +2,14 @@
 
 class _XML {
 
-    private $_configPath = 'config/config.xml';
+    public $_configPath = 'config/config.xml';
     
     function __construct() {
         
         if (file_exists($this->_configPath)) {
             $this->xml = new DomDocument();
+            $this->xml->preserveWhiteSpace = false;
+            $this->xml->formatOutput = true;
             $this->xml->load($this->_configPath);
         }
         
@@ -27,16 +29,16 @@ class _XML {
     /*
      * function readNodeByName( $rootName, $name )
      * $rootNode - pass in the root node you which to grab data from
-     * $name - This is part of a child node, once we find the matching name, we will gather all siblings
+     * $element - This is part of a child node, once we find the matching name, we will gather all siblings
      * return array of siblings;
      */
-    function readNodeByName($rootNode, $name) {
+    function readNodeByElement($rootNode, $element) {
         
         $data = array();
         foreach ($this->xml->getElementsByTagName($rootNode) as $node) {
             if(count($data) > 0) break;
             foreach($node->childNodes as $child) {
-                if ($child->nodeValue == $name) {
+                if ($child->nodeValue == $element) {
                     if(count($data) <= 0) {
                         $data = $node;
                         break;
@@ -54,7 +56,23 @@ class _XML {
         return $ret;
         
     }
+    
+    function createElement($element, $data = null) {
+        $node = /*($this->xml->getElementsByTagName($element)->length == 0) ? $this->xml->createElement($element) : */$this->xml->getElementsByTagName($element);
+        
+        if (is_array($data)) {
+            
+            $connection = $this->xml->createElement('connection');
+            foreach($data as $key => $value) {
+                $newElement = $this->xml->createElement($key, $value);
+                $connection->appendChild($newElement);
+            }
+            $node->appendChild($connection);
+            $this->xml->save($this->_configPath);
+            
+        } else {
+            return false;
+        }
+    }
 
 }
-
-?>

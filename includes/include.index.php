@@ -16,7 +16,7 @@ define('LIBS', 'libs/');
 require '/libs/Bootstrap.php';
 
 //XML Class
-require '/libs/xml.php';
+require '/libs/Xml.php';
 
 //Controller Framework
 require '/libs/Controller.php';

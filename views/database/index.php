@@ -24,13 +24,13 @@
         <div id="ltk-right-content">
             <form id="ltk-form" method="post" action="<?php echo URL; ?>database/PostFormData">
                 <label for="ServerTextBox">Server:</label>
-                <input type="text" id="ServerTextBox" name="host" class="ltk-text" tabindex="1" value="24.84.76.156" />
+                <input type="text" id="ServerTextBox" name="host" class="ltk-text" tabindex="1"  />
                 <label for="UsernameTextBox">Username:</label>
-                <input type="text" id="UsernameTextBox" name="username" class="ltk-text" tabindex="2" value="listrak" />
+                <input type="text" id="UsernameTextBox" name="username" class="ltk-text" tabindex="2" />
                 <label for="PasswordTextBox">Password:</label>
-                <input type="text" id="PasswordTextBox" name="password" class="ltk-text" tabindex="3" value="listrak" />
+                <input type="text" id="PasswordTextBox" name="password" class="ltk-text" tabindex="3" />
                 <label for="PortTextBox">Port:</label>
-                <input type="text" id="PortTextBox" name="port" class="ltk-text" tabindex="4" value="listrak" />
+                <input type="text" id="PortTextBox" name="port" class="ltk-text" tabindex="4" value="3306" />
                 <label for="DatabaseSelect">Database:</label>
                 <select id="DatabaseSelect" name="database" tabindex="5" >
                     <option value="">Select your database...</option>
@@ -39,6 +39,7 @@
                 </select>
                 <br />
                 <input type="submit" id="SubmitButton" class="ltk-btn" value="Save" />
+                <span class="ltk-save-msg">Saved...</span>
             </form>            
         </div>
     </div>

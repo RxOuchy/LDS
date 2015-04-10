@@ -8,6 +8,22 @@ class database_Model extends Model {
     
     function PostFormData() {
         
+        if (!isset($_POST['isNew'])) {
+            $this->path = "/config/database/connection";
+            $this->xPath = new DOMXPath($this->xml->xml);
+
+            $this->node = $this->xPath->query($this->path)->item(0);
+            foreach( $this->node->childNodes as $child ) {
+                $child->firstChild->nodeValue = $_POST[$child->nodeName];
+            }
+        } else {
+            
+            $this->xml->createElement('database', $_POST);
+            
+        }
+        
+        $this->xml->xml->save($this->xml->_configPath);
+        echo json_encode("success");
     }
     
     function getServerList() {
@@ -24,14 +40,9 @@ class database_Model extends Model {
         echo json_encode($data);
     }
     
-    function getDataByName() {
-        $name = $_POST['name'];
-        echo json_encode($this->xml->readNodeByName('connection', $name));
-    }
-    
     function getDataByDataBase() {
         $db = $_POST['database'];
-        echo json_encode($this->xml->readNodeByName('connection', $db));
+        echo json_encode($this->xml->readNodeByElement('connection', $db));
     }
 
 }
