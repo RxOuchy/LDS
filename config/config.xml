@@ -20,8 +20,8 @@
     <server>
       <name>Listrak</name>
       <host>ftp.listrakbi.com</host>
-      <username>listraktest</username>
-      <password>listrakasdada</password>
+      <username>listrak</username>
+      <password>listrak</password>
     </server>
   </ftp>
   <exports>
@@ -43,11 +43,11 @@
   </exports>
   <database>
     <connection>
-      <host><![CDATA[localhost]]></host>
-      <username><![CDATA[listrak]]></username>
-      <password><![CDATA[listrak123]]></password>
-      <database><![CDATA[ee11410]]></database>
-      <port><![CDATA[3306]]></port>
+      <host>test</host>
+      <username>test</username>
+      <password>test</password>
+      <port>3306</port>
+      <database>magento</database>
     </connection>
   </database>
 </config>

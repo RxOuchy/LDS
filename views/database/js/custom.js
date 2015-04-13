@@ -34,7 +34,7 @@
                 //Get the form data from the selected item
                 jQuery.post('database/getDataByDatabase', {'database': name }, function(data) {
 
-                    jQuery('form input[type=text]').each(function() {
+                    jQuery('form input[type=text], form select').each(function() {
                        var id = jQuery(this).attr('name');
                        jQuery(this).val(data[id]);
                     });
@@ -43,8 +43,8 @@
 
                 //Delete the item
                 jQuery('#btnDelete').click(function(){
-                    jQuery.post('database/deleteNodeByDatabase', name, function(o){
-                        alert(name);
+                    jQuery.post('database/deleteElement', { 'database': name }, function(o){
+                        getServerList();
                     });
                     return false;
                 });
@@ -63,7 +63,8 @@
     //New Server Logic
     jQuery('#btnNew').click(function(){
         jQuery('form').append('<input type="hidden" id="isNew" name="isNew" value="1" />');
-        jQuery('#ltk-right-content').show();        
+        jQuery('#ltk-right-content').show();
+        jQuery('#ltk-form')[0].reset();
     });
     
     //Submit the form Data

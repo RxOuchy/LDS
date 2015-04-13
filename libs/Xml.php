@@ -58,14 +58,16 @@ class _XML {
     }
     
     function createElement($element, $data = null) {
-        $node = /*($this->xml->getElementsByTagName($element)->length == 0) ? $this->xml->createElement($element) : */$this->xml->getElementsByTagName($element);
+        $node = ($this->xml->getElementsByTagName($element)->length == 0) ? $this->xml->createElement($element) : $this->xml->getElementsByTagName($element)->item(0);
         
         if (is_array($data)) {
             
             $connection = $this->xml->createElement('connection');
             foreach($data as $key => $value) {
-                $newElement = $this->xml->createElement($key, $value);
-                $connection->appendChild($newElement);
+                if ( $key != 'isNew' ) {
+                    $newElement = $this->xml->createElement($key, $value);
+                    $connection->appendChild($newElement);
+                }
             }
             $node->appendChild($connection);
             $this->xml->save($this->_configPath);
@@ -73,6 +75,22 @@ class _XML {
         } else {
             return false;
         }
+    }
+    
+    function deleteNodeByChildElement($rootNode, $element) {
+        
+        foreach ($this->xml->getElementsByTagName($rootNode) as $node) {            
+            foreach($node->childNodes as $child) {
+                if ($child->nodeValue == $element) {
+                    //var_dump( $child->parentNode);
+                    $child->parentNode->parentNode->removeChild($child->parentNode);
+                    break;
+                }
+            }
+        }
+        $this->xml->save($this->_configPath);
+        return true;
+        
     }
 
 }

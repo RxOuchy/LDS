@@ -44,5 +44,12 @@ class database_Model extends Model {
         $db = $_POST['database'];
         echo json_encode($this->xml->readNodeByElement('connection', $db));
     }
+    
+    function deleteElement() {
+        $element = $_POST['database'];
+        if ($this->xml->deleteNodeByChildElement('connection', $element))
+            return true;
+        return false;
+    }
 
 }
