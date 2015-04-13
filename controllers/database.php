@@ -28,6 +28,10 @@
             $this->model->getDataByDatabase();
         }
         
+        function deleteElement() {
+            $this->model->deleteElement();
+        }
+        
     }
 
 ?>

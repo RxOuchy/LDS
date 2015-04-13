@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <!--   
 /**
  *     Listrak Flat File Setup Wizard 
@@ -10,46 +9,45 @@
  *     @version    1.0.0
  */
  -->
- 
- <config>
-    <install>
-        <date><![CDATA[Fri, 06 Feb 2015 16:25:11 +0000]]></date>
-    </install>
-    <crypt>
-        <key><![CDATA[abcdefghijklmnop]]></key>
-    </crypt>
-    <ftp>
-        <server>
-            <name>GhostSector</name>
-            <host>ftp.ghostsector.com</host>
-            <username>listrak</username>
-            <password>listrak</password>
-        </server>
-    </ftp>
-    <exports>
-        <table id="sales_flat_order">
-            <name>orders</name>
-            <select>*</select>
-            <key>entity_id</key>
-        </table>
-        <table id="sales_flat_order_item">
-            <name>orderitems</name>
-            <select>*</select>
-            <key>item_id</key>
-        </table>
-        <table id="core_flag">
-            <name>products</name>
-            <select>flag_id,flag_code</select>
-            <key>flag_id</key>
-        </table>
-    </exports>
-    <database>        
-        <connection>
-            <host><![CDATA[localhost]]></host>
-            <username><![CDATA[root]]></username>
-            <password><![CDATA[]]></password>
-            <database><![CDATA[magento]]></database>
-            <port><![CDATA[3306]]></port>
-        </connection>
-    </database>
- </config>
+<config>
+  <install>
+    <date><![CDATA[Fri, 06 Feb 2015 16:25:11 +0000]]></date>
+  </install>
+  <crypt>
+    <key><![CDATA[abcdefghijklmnop]]></key>
+  </crypt>
+  <ftp>
+    <server>
+      <name>Listrak</name>
+      <host>ftp.listrakbi.com</host>
+      <username>listrak</username>
+      <password>listrak</password>
+    </server>
+  </ftp>
+  <exports>
+    <table id="sales_flat_order">
+      <name>orders</name>
+      <select>*</select>
+      <key>entity_id</key>
+    </table>
+    <table id="sales_flat_order_item">
+      <name>orderitems</name>
+      <select>*</select>
+      <key>item_id</key>
+    </table>
+    <table id="core_flag">
+      <name>products</name>
+      <select>flag_id,flag_code</select>
+      <key>flag_id</key>
+    </table>
+  </exports>
+  <database>
+    <connection>
+      <host>test</host>
+      <username>test</username>
+      <password>test</password>
+      <port>3306</port>
+      <database>magento</database>
+    </connection>
+  </database>
+</config>

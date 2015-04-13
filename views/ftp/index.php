@@ -33,6 +33,7 @@
                 <input type="text" id="PasswordTextBox" name="password" class="ltk-text" tabindex="4" />
                 <br />
                 <input type="submit" id="SubmitButton" class="ltk-btn" value="Save" />
+                <span class="ltk-save-msg">Saved...</span>
             </form>
         </div>
     </div>
