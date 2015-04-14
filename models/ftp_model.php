@@ -12,7 +12,8 @@ class ftp_Model extends Model {
         
         $this->node = $this->xPath->query($this->path)->item(0);
         foreach( $this->node->childNodes as $child ) {
-            $child->firstChild->nodeValue = $_POST[$child->nodeName];
+            if ($child->localName != 'host')
+                $child->nodeValue = $_POST[$child->nodeName];
         }
         
         $this->xml->xml->save($this->xml->_configPath);

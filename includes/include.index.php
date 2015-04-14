@@ -27,5 +27,8 @@ require '/libs/Model.php';
 //View Framework
 require '/libs/View.php';
 
+//Database Information
+require 'includes/db.include.php';
+
 
 ?>

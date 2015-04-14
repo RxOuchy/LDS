@@ -12,7 +12,7 @@
             jQuery('.ltk-menu-list').empty();
 
             for(var i = 0; i < list.length; i++ ) {
-                jQuery('.ltk-menu-list').append('<li class="ltk-menu-list-item"><a href="javascript:void();" ltk-item-id="' + list[i].name + '">' + list[i].name + '</a></li>');
+                jQuery('.ltk-menu-list').append('<li class="ltk-menu-list-item"><a href="javascript:void;" ltk-item-id="' + list[i].name + '">' + list[i].name + '</a></li>');
             }
 
             jQuery('.ltk-menu-list-item a').on('click', function(){

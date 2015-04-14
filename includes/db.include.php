@@ -11,24 +11,13 @@
  
 class dbConnection extends mysqli {
 
-    private $host       ="localhost";
-    private $user       = "root"; 
-    private $password   = "";
-    private $db         = "database";
-    private $port       = 3306;
-
-	function __construct($host, $user, $pass, $db, $port) {
+	function __construct($host, $user, $pass, $db = null, $port = 3306) {
         
-        if (isset($host))
-            $this->host = $host;
-        if (isset($user))
-            $this->user = $user;
-        if (isset($pass))
-            $this->password = $pass;
-        if (isset($db))
-            $this->db = $db;
-        if (isset($port))
-            $this->port = (int)$port;
+        $this->host = $host;
+        $this->user = $user;
+        $this->password = $pass;
+        $this->db = $db;
+        $this->port = (int)$port;
                     
 		parent::__construct($this->host, $this->user, $this->password, $this->db, $this->port);
         
@@ -70,6 +59,30 @@ class dbConnection extends mysqli {
 		}
 
 	}
+        
+        function jsonBuild( $sql, $key = null, $filter = null ) {
+            $qrh = $this->query($sql) or die( $this->error . "<br>" . $sql );
+            
+            while ($row = $qrh->fetch_array()) {
+                foreach( $row as $k=>$v ) {
+                    if (isset($filter))
+                        if(strpos(strtolower($v), strtolower($filter)) > 0 ) continue;
+                    if (isset($key)) {
+                        if( !is_numeric( $k ) ) {
+                            $toret[][ $key ] = str_replace(array("\n", "\r", "\r\n"), '', $v);
+                        }
+                    } else {
+                        $toret[ $v ] = str_replace(array("\n", "\r", "\r\n"), '', $v);
+                    }
+                }			
+            }
+
+            if( isset( $toret ) ) {
+                    return $toret;
+            } else {
+                    return null;
+            }
+        }
     
     function getTables() {
         $results = $this->query('SHOW TABLES');
@@ -77,6 +90,10 @@ class dbConnection extends mysqli {
             $toret[] = $row[0];
         }
         return $toret;
+    }
+    
+    function select_db($dbname) {
+        parent::select_db($dbname);
     }
 }
 

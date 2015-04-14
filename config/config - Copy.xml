@@ -20,8 +20,8 @@
     <server>
       <name>Listrak</name>
       <host>ftp.listrakbi.com</host>
-      <username>test</username>
-      <password>test</password>
+      <username>listrak</username>
+      <password>listrak</password>
     </server>
   </ftp>
   <exports>
@@ -43,16 +43,11 @@
   </exports>
   <database>
     <connection>
-      <host>localhost</host>
-      <username>listrak</username>
-      <password>listrak123</password>
-      <port>3306</port>
-    </connection>
-    <connection>
       <host>test</host>
       <username>test</username>
       <password>test</password>
       <port>3306</port>
+      <database>magento</database>
     </connection>
   </database>
 </config>

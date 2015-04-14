@@ -3,7 +3,11 @@
     class Model {
     
         function __construct() {
-            //$this->db = new Database(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS);
+            
+        }
+        
+        function dbConnect($host, $user, $pass, $db = null, $port = 3306) {
+            $this->db = new dbConnection($host, $user, $pass, $db, $port);
         }
     
     }
