@@ -35,5 +35,9 @@ class files extends Controller {
     function getTableList() {
         $this->model->getTableList();
     }
+    
+    function getFieldList() {
+        $this->model->getFieldList();
+    }
 
 }

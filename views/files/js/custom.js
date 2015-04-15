@@ -85,6 +85,10 @@
         
     };
     
+    var getFieldList = function() {
+        
+    }
+    
     jQuery(document).ready(function(){
         getFileList();
         getServerList();
@@ -127,9 +131,15 @@
     jQuery('#DatabaseSelect').change(function() {
         var host = jQuery('#ServerSelect').val();
         var db = jQuery(this).val();
-        
         getTableListList(host, db);
+    });
+    
+    jQuery('#TableSelect').change(function() {
+        var host = jQuery('#ServerSelect').val();
+        var db = jQuery('#DatabaseSelect').val();
+        var table = jQuery(this).val();
         
+        jQuery.post('files/getFieldList', { 'host': host, 'database': db, 'table': table }, function(list){});
     });
     
 })();

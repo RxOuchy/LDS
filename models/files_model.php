@@ -88,5 +88,30 @@ class files_Model extends Model {
         }
         
     }
+    
+    function getFieldList() {
+        $database = $_POST['database'];
+        $host = $_POST['host'];
+        $table = $_POST['table'];
+        $data = $this->xml->readNodeByElement('connection', $host);
+        
+        $this->db = new dbConnection($data['host'], $data['username'], $data['password'], $database, $data['port']);
+        
+        $query = "SELECT * from " . $table . " LIMIT 1";
+
+        if ($result = $this->db->query($query)) {
+
+            /* Get field information for all columns */
+            $finfo = $result->fetch_fields();
+
+            foreach ($finfo as $val) {
+                printf("Name:     %s\n", $val->name);
+                printf("Table:    %s\n", $val->table);
+                printf("max. Len: %d\n", $val->max_length);
+                printf("Flags:    %d\n", $val->flags);
+                printf("Type:     %d\n\n", $val->type);
+            }
+        }
+    }
 
 }
