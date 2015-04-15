@@ -32,6 +32,10 @@
             $this->model->deleteElement();
         }
         
+        function validateConnection() {
+            $this->model->validateConnection();
+        }
+        
     }
 
 ?>

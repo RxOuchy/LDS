@@ -31,12 +31,6 @@
                 <input type="text" id="PasswordTextBox" name="password" class="ltk-text" tabindex="3" />
                 <label for="PortTextBox">Port:</label>
                 <input type="text" id="PortTextBox" name="port" class="ltk-text" tabindex="4" value="3306" />
-                <label for="DatabaseSelect">Database:</label>
-                <select id="DatabaseSelect" name="database" tabindex="5" >
-                    <option value="" selected>Select your database...</option>
-                    <option value="ee11410">ee11410</option>
-                    <option value="magento">magento</option>
-                </select>
                 <br />
                 <input type="submit" id="SubmitButton" class="ltk-btn" value="Save" />
                 <span class="ltk-save-msg">Saved...</span>

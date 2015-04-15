@@ -11,28 +11,20 @@
             <ul class="ltk-menu-list">             
             </ul>
             <ul class="ltk-menu-buttons">
-                <li class="ltk-menu-button">
-                    <input type="button" id="btnNew" class="ltk-menu-btn" value="New" />
-                </li>
-                <li class="ltk-menu-button">
-                    <input type="button" id="btnDelete" class="ltk-menu-btn ltk-del-button" value="Delete" />
-                </li>
+                
             </ul>
         </div>
         
         <!-- Right 'Form' Area -->
         <div id="ltk-right-content">
-            <form id="ltk-form" method="post" action="<?php echo URL; ?>ftp/PostFormData/">
-                <label for="NameTextBox">Name:</label>
-                <input type="text" id="NameTextBox" name="name" class="ltk-text" tabindex="1" />
-                <label for="HostTextBox">Host:</label>
-                <input type="text" id="HostTextBox" name="host" class="ltk-text" tabindex="2" />
+            <form id="ltk-form" method="post" action="<?php echo URL; ?>ftp/PostFormData/">                
                 <label for="UsernameTextBox">Username:</label>
-                <input type="text" id="UsernameTextBox" name="username" class="ltk-text" tabindex="3" />
+                <input type="text" id="UsernameTextBox" name="username" class="ltk-text" tabindex="1" />
                 <label for="PasswordTextBox">Password:</label>
-                <input type="text" id="PasswordTextBox" name="password" class="ltk-text" tabindex="4" />
+                <input type="text" id="PasswordTextBox" name="password" class="ltk-text" tabindex="2" />
                 <br />
                 <input type="submit" id="SubmitButton" class="ltk-btn" value="Save" />
+                <input type="hidden" name="name" value="Listrak" />
                 <span class="ltk-save-msg">Saved...</span>
             </form>
         </div>

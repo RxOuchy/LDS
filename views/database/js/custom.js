@@ -8,7 +8,7 @@
             jQuery('.ltk-menu-list').empty();
 
             for(var i = 0; i < list.length; i++ ) {
-                jQuery('.ltk-menu-list').append('<li class="ltk-menu-list-item"><a href="javascript:void();" ltk-item-id="' + list[i].database + '">' + list[i].database + '</a></li>');
+                jQuery('.ltk-menu-list').append('<li class="ltk-menu-list-item"><a href="javascript:void;" ltk-item-id="' + list[i].host + '">' + list[i].host + '</a></li>');
             }
 
             jQuery('.ltk-menu-list-item a').on('click', function(){
@@ -32,7 +32,7 @@
                 jQuery(this).parent().addClass('selected');
 
                 //Get the form data from the selected item
-                jQuery.post('database/getDataByDatabase', {'database': name }, function(data) {
+                jQuery.post('database/getDataByDatabase', {'host': name }, function(data) {
 
                     jQuery('form input[type=text], form select').each(function() {
                        var id = jQuery(this).attr('name');
@@ -43,7 +43,7 @@
 
                 //Delete the item
                 jQuery('#btnDelete').click(function(){
-                    jQuery.post('database/deleteElement', { 'database': name }, function(o){
+                    jQuery.post('database/deleteElement', { 'host': name }, function(o){
                         getServerList();
                     });
                     return false;
@@ -74,17 +74,25 @@
         var data = jQuery(this).serialize();
         var url = jQuery(this).attr('action');
         
-        jQuery.post(url, data, function(o){
-            //Show that we did save the form
-            jQuery('.ltk-save-msg').css('display','inline-block');
-            
-            //Update the List
-            getServerList();
-            
-            //The list item is now deselected so we need to hide the right side and delete button
-            jQuery('#btnDelete').css('display','none');
-            jQuery('#ltk-right-content').fadeOut(1500);
-        });
+        jQuery.post('database/validateConnection', data, function(d) {
+            if (d.status == 'success') {
+                jQuery.post(url, data, function(o){
+                    //Show that we did save the form
+                    jQuery('.ltk-save-msg').css({'display':'inline-block', 'color': '#2EB62E'});
+                    jQuery('.ltk-save-msg').html('Saved...');
+
+                    //Update the List
+                    getServerList();
+
+                    //The list item is now deselected so we need to hide the right side and delete button
+                    jQuery('#btnDelete').css('display','none');
+                    jQuery('#ltk-right-content').fadeOut(1500);
+                });
+            } else {
+                jQuery('.ltk-save-msg').css({'display':'inline-block', 'color': 'red'});
+                jQuery('.ltk-save-msg').html(d.err_msg);
+            }
+        },'json');
         
         return false;
     });

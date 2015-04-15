@@ -14,11 +14,11 @@ class database_Model extends Model {
 
             $this->node = $this->xPath->query($this->path)->item(0);
             foreach( $this->node->childNodes as $child ) {
-                $child->firstChild->nodeValue = $_POST[$child->nodeName];
+                $child->nodeValue = $_POST[$child->nodeName];
             }
         } else {
             
-            $this->xml->createElement('database', $_POST);
+            $this->xml->createElement('host', $_POST);
             
         }
         
@@ -31,8 +31,8 @@ class database_Model extends Model {
         $data = array();
         foreach($this->xml->readByRoot('connection') as $node) {
             foreach($node->childNodes as $child) {
-                if ($child->localName == 'database') {
-                    $data[]['database'] = $child->nodeValue;
+                if ($child->localName == 'host') {
+                    $data[]['host'] = $child->nodeValue;
                 }
             }
         }
@@ -41,15 +41,30 @@ class database_Model extends Model {
     }
     
     function getDataByDataBase() {
-        $db = $_POST['database'];
+        $db = $_POST['host'];
         echo json_encode($this->xml->readNodeByElement('connection', $db));
     }
     
     function deleteElement() {
-        $element = $_POST['database'];
+        $element = $_POST['host'];
         if ($this->xml->deleteNodeByChildElement('connection', $element))
             return true;
         return false;
+    }
+    
+    function validateConnection() {
+        $host = $_POST['host'];
+        $user = $_POST['username'];
+        $pass = $_POST['password'];
+        $port = $_POST['port'];
+                
+        $db = new mysqli($host, $user, $pass, null, $port);
+        
+        if(mysqli_connect_error()) {
+            echo json_encode(array('status'=>'error', 'err_msg'=>mysqli_connect_error()));
+        } else {
+            echo json_encode(array('status'=>'success'));
+        }
     }
 
 }
