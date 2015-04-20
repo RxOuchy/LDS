@@ -15,6 +15,8 @@
     
     try {
         require_once(__DIR__ . '/includes/include.index.php');
+        require_once(__DIR__ . '/includes/db.init.include.php');
+        require_once(__DIR__ . '/includes/export.include.php');
         initDB();
         
         $export = new exportProcess(__DIR__ . '/config/settings.xml');

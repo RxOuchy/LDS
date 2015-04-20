@@ -95,6 +95,19 @@ class dbConnection extends mysqli {
     function select_db($dbname) {
         parent::select_db($dbname);
     }
+    
+    public function type2txt($type_id) {
+        static $types;
+
+        if (!isset($types))
+        {
+            $types = array();
+            $constants = get_defined_constants(true);
+            foreach ($constants['mysqli'] as $c => $n) if (preg_match('/^MYSQLI_TYPE_(.*)/', $c, $m)) $types[$n] = $m[1];
+        }
+        
+        return array_key_exists($type_id, $types)? $types[$type_id] : $type_id;
+    }
 }
 
 ?>

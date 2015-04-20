@@ -93,24 +93,37 @@ class files_Model extends Model {
         $database = $_POST['database'];
         $host = $_POST['host'];
         $table = $_POST['table'];
-        $data = $this->xml->readNodeByElement('connection', $host);
+        $data = $this->xml->readNodeByElement('connection', $host);        
         
         $this->db = new dbConnection($data['host'], $data['username'], $data['password'], $database, $data['port']);
         
-        $query = "SELECT * from " . $table . " LIMIT 1";
+        $query = "SELECT COLUMN_NAME, COLUMN_TYPE
+                FROM information_schema.COLUMNS
+                WHERE TABLE_SCHEMA = '" . $database . "'
+                AND TABLE_NAME = '" . $table . "'";
 
         if ($result = $this->db->query($query)) {
-
-            /* Get field information for all columns */
-            $finfo = $result->fetch_fields();
-
-            foreach ($finfo as $val) {
-                printf("Name:     %s\n", $val->name);
-                printf("Table:    %s\n", $val->table);
-                printf("max. Len: %d\n", $val->max_length);
-                printf("Flags:    %d\n", $val->flags);
-                printf("Type:     %d\n\n", $val->type);
+            $i = 0;
+            while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                foreach( $row as $k=>$v ) {
+                    switch($k) {
+                        case 'COLUMN_TYPE': 
+                            if (strpos($v, 'unsigned') > 0 ) {
+                                $ret[$i][$k] = substr($v, 0, strpos($v, 'unsigned'));
+                            } else {
+                                $ret[$i][$k] = $v;
+                            }
+                            break;
+                        default:
+                            $ret[$i][$k] = $v;
+                            break;
+                    }
+                }
+                $i++;
             }
+            
+            echo json_encode($ret);
+            
         }
     }
 

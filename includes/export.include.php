@@ -19,7 +19,7 @@ class exportProcess {
     
     function __construct($config) {
         $this->conf = simplexml_load_file($config);
-        $this->settings = $this->conf->xpath('//database/table');
+        $this->settings = $this->conf->xpath('//settings/database/table');
     }
     
     function loadSettings($arguments) {
@@ -88,9 +88,9 @@ class exportProcess {
 	}
     
     function _sendFiles() {
-        $ftpUser    = $this->conf->ftp->username;
-        $ftpPass    = $this->conf->ftp->password;
-        $host       = $this->conf->ftp->host;
+        $ftpUser    = $this->conf->settings->ftp->username;
+        $ftpPass    = $this->conf->settings->ftp->password;
+        $host       = $this->conf->settings->ftp->host;
         $conn_id = ftp_connect($host) or die("<h2>FTP connection failed for: $host!</h2>");
         $login_result = ftp_login($conn_id, $ftpUser, $ftpPass) or die("<h2>FTP Login failed!</h2>");
     
@@ -102,8 +102,12 @@ class exportProcess {
         
         if ($login_result) {
             if(ftp_put($conn_id, $this->fileName, $this->file, FTP_BINARY)) {
+                echo 'Successfully uploaded: <strong><u>' . $this->fileName . '</u></strong> to the FTP Server </br>';
                 return true;
-            } 
+            } else {
+                echo 'Failed to upload: <strong><u>' . $this->fileName . '</u></strong> to the FTP Server </br>';
+                return false;
+            }
         }
         return false; 
         

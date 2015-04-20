@@ -35,166 +35,29 @@
                 <select id="TableSelect" name="table" tabindex="3">
                     <option value="">Select a Table...</option>
                 </select>
-                <label for="FieldSelect">Fields:</label>
-                <table border="1" cellpadding="0" cellspacing="0" width="71%">
+                <label id="LabelFieldList" for="TableFieldList">Fields:</label>
+                <table border="1" id="TableFieldList" cellpadding="0" cellspacing="0" width="70%">
                     <tr style="background-color: grey;">
-                        <td width="30px">
+                        <td width="36px" style="padding: 1px 0 1px 6px;">
                             <input type="checkbox" id="chkAll" name="select" value="all" checked />
                         </td>
-                        <td width="125px">
+                        <td width="125px" style="padding: 1px 0 1px 6px;">
                             Field
                         </td>
-                        <td>
+                        <td style="padding: 1px 0 1px 6px;">
                             Data Type
                         </td>
                     </tr>
                     <tr>
                         <td colspan="3">
-                            <div style="height: 133px; overflow: auto; width: 100%;">
-                                <table border="1" cellpadding="0" cellspacing="0" width="100%">
-                                    <tr>
-                                        <td width="30px">
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td width="125px">
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td>
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td>
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td>
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td>
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td>
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td>
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td>
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td>
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td>
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td>
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkAll" name="select" value="all" checked />
-                                        </td>
-                                        <td>
-                                            Field
-                                        </td>
-                                        <td>
-                                            Data Type
-                                        </td>
-                                    </tr>
-                                </table>
+                            <div style="height: 144px; overflow: auto; width: 100%;">
+                                <table border="1" id="FieldList" cellpadding="0" cellspacing="0" width="100%"></table>
                             </div>
                         </td>
                     </tr>
                 </table>
-                <label for="IncrementalSelect">Incremental Field:</label>
-                <select id="IncrementalSelect" name="key" tabindex="5">
-                    <option value="">Select an incremental data field...</option>
-                    <option value="modifiedDate">modifiedDate</option>
-                    <option value="autoIncrement">Auto Incrementing Primary Key</option>
-                </select>
+                <label id="LabelIncrementalSelect" for="IncrementalSelect">Incremental Field:</label>
+                <select id="IncrementalSelect" name="key" tabindex="5"></select>
                 <br />
                 <input type="submit" id="SubmitButton" class="ltk-btn" value="Save" />
                 <span class="ltk-save-msg">Saved...</span>

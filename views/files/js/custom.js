@@ -85,9 +85,28 @@
         
     };
     
-    var getFieldList = function() {
+    var getFieldList = function(host,db,table) {
         
-    }
+        jQuery('#IncrementalSelect').empty();
+        jQuery('#IncrementalSelect').append('<option value="">Select an incremental data field...</option>');
+        jQuery.post('files/getFieldList', { 'host': host, 'database': db, 'table': table }, function(data){
+            jQuery('#LabelFieldList').show();
+            jQuery('#TableFieldList').show();
+            jQuery('#LabelIncrementalSelect').show();
+            jQuery('#IncrementalSelect').show();
+            for(var i = 0; i < data.length; i++) {
+                jQuery('#FieldList').append('\
+                                    <tr>\
+                                        <td width="34px"><input type="checkbox" id="' + data[i].COLUMN_NAME + '" name="select" value="' + data[i].COLUMN_NAME + '" checked /></td>\
+                                        <td width="125px">' + data[i].COLUMN_NAME + '</td>\
+                                        <td>' + data[i].COLUMN_TYPE + '</td>\
+                                    </tr>\
+                                ');
+                
+                jQuery('#IncrementalSelect').append('<option value="' + data[i].COLUMN_NAME + '">' + data[i].COLUMN_NAME + '</option>');
+            }
+        },'json');
+    };
     
     jQuery(document).ready(function(){
         getFileList();
@@ -99,6 +118,10 @@
         jQuery('form').append('<input type="hidden" id="isNew" name="isNew" value="1" />');
         jQuery('#ltk-right-content').show();
         jQuery('#ltk-form')[0].reset();
+        jQuery('#LabelFieldList').hide();
+        jQuery('#TableFieldList').hide();
+        jQuery('#LabelIncrementalSelect').hide();
+        jQuery('#IncrementalSelect').hide();
     });
     
     jQuery('#ltk-form').submit(function(){
@@ -139,7 +162,7 @@
         var db = jQuery('#DatabaseSelect').val();
         var table = jQuery(this).val();
         
-        jQuery.post('files/getFieldList', { 'host': host, 'database': db, 'table': table }, function(list){});
+        getFieldList(host,db,table);
     });
     
 })();

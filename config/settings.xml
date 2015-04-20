@@ -10,7 +10,46 @@
  *     @version    1.0.0
  */
  -->
- 
- <settings>
-    
- </settings>
+ <configurations>
+    <config>
+       <install>
+           <date><![CDATA[Fri, 06 Feb 2015 16:25:11 +0000]]></date>
+       </install>
+       <crypt>
+           <key><![CDATA[abcdefghijklmnop]]></key>
+       </crypt>
+       <database>        
+           <connection>
+               <host><![CDATA[localhost]]></host>
+               <username><![CDATA[listrak]]></username>
+               <password><![CDATA[listrak123]]></password>
+               <database><![CDATA[ee11410]]></database>
+               <port><![CDATA[3306]]></port>
+           </connection>
+       </database>
+    </config>
+    <settings>
+       <database>
+           <table id="sales_flat_order">
+               <file>orders</file>
+               <select>*</select>
+               <key>entity_id</key>
+           </table>
+           <table id="sales_flat_order_item">
+               <file>orderitems</file>
+               <select>*</select>
+               <key>item_id</key>
+           </table>
+           <table id="core_flag">
+               <file>products</file>
+               <select>flag_id,flag_code</select>
+               <key>flag_id</key>
+           </table>
+       </database>
+       <ftp>
+           <host>ftp.ghostsector.com</host>
+           <username>listrak</username>
+           <password>listrak</password>
+       </ftp>
+    </settings>
+ </configurations>

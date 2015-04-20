@@ -9,8 +9,8 @@
  *     @version    1.0.0
  */
  
-    ini_set('display_errors', '1');
-    error_reporting(-1);
+    ini_set('display_errors', '0');
+    error_reporting(0);
     require_once(__DIR__ . '/includes/include.index.php');
     
     $app = new Bootstrap();

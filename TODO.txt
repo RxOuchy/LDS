@@ -21,9 +21,6 @@ Things I need to update.
     -Create Layout to be similar among the 2 applications
     -Go with Left Side "List" with New Button
     -Right side data entry fields with save button
-    
--Create Database Tree List
-    -Allow field selection from Tree
 
 
 --Code Hold
@@ -34,3 +31,8 @@ Things I need to update.
                         from information_schema.key_column_usage
                         where constraint_schema = 'ee11410'
                         and REFERENCED_COLUMN_NAME IS NOT NULL";
+    -- Get Table Structure
+        -$sql = "SELECT *
+                    FROM information_schema.COLUMNS
+                    WHERE TABLE_SCHEMA = 'ee11410'
+                    AND TABLE_NAME = 'admin_rule'";

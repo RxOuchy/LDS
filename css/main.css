@@ -48,9 +48,11 @@ h1, h2, h3, h4, h5, p { margin:0; padding:0; }
 .ltk-body p { margin-bottom: 15px; }
 #ltk-right-content { /*border: 1px solid #ccc;*/ width: 550px; padding: 0 0 0 30px; display: table-cell; }
 #ltk-right-content form label { width: 100%; display: block; }
-#ltk-right-content form input[type=text] { padding: 10px; width: 70%; border: 1px solid #989898; border-left: 5px solid #989898; background: #f1f1f1; margin-bottom: 20px; }
+#ltk-right-content form input[type=text], #ltk-right-content form input[type=password] { padding: 10px; width: 70%; border: 1px solid #989898; border-left: 5px solid #989898; background: #f1f1f1; margin-bottom: 20px; }
 #ltk-right-content form select { border: 1px solid #989898; border-left: 5px solid #989898; background: #f1f1f1; width: 70%; padding: 9px 10px; margin: 0 0 20px 0; }
 #ltk-right-content .ltk-save-msg { color: #2EB62E; margin-left: 5px; display: none; }
+#ltk-right-content #TableFieldList { margin-bottom: 20px; }
+#ltk-right-content #FieldList td { padding: 1px 0 1px 6px; }
 
 /* Buttons */
 .ltk-buttons { margin: 30px 30px 0 0;}

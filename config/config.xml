@@ -44,8 +44,8 @@
   <database>
     <connection>
       <host>localhost</host>
-      <username>root</username>
-      <password></password>
+      <username>listrak</username>
+      <password>listrak123</password>
       <port>3306</port>
     </connection>
     <connection>

@@ -28,7 +28,7 @@
                 <label for="UsernameTextBox">Username:</label>
                 <input type="text" id="UsernameTextBox" name="username" class="ltk-text" tabindex="2" />
                 <label for="PasswordTextBox">Password:</label>
-                <input type="text" id="PasswordTextBox" name="password" class="ltk-text" tabindex="3" />
+                <input type="password" id="PasswordTextBox" name="password" class="ltk-text" tabindex="3" />
                 <label for="PortTextBox">Port:</label>
                 <input type="text" id="PortTextBox" name="port" class="ltk-text" tabindex="4" value="3306" />
                 <br />

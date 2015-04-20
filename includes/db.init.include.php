@@ -11,15 +11,15 @@
 
     function initDB() {
         global $conn;
-        if (file_exists(__DIR__ . '/../config/config.xml')){
-            $config = __DIR__ . '/../config/config.xml';
+        if (file_exists(__DIR__ . '/../config/settings.xml')){
+            $config = __DIR__ . '/../config/settings.xml';
             
             $configXML = simplexml_load_file($config);
-            $host   = (string)$configXML->database->connection->host;
-            $user   = (string)$configXML->database->connection->username;
-            $pass   = (string)$configXML->database->connection->password;
-            $db     = (string)$configXML->database->connection->database;
-            $port   = (int)$configXML->database->connection->port;
+            $host   = (string)$configXML->config->database->connection->host;
+            $user   = (string)$configXML->config->database->connection->username;
+            $pass   = (string)$configXML->config->database->connection->password;
+            $db     = (string)$configXML->config->database->connection->database;
+            $port   = (int)$configXML->config->database->connection->port;
             
             $conn = new dbConnection($host, $user, $pass, $db, $port);
         }
